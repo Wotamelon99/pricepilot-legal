@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PricePilot Datenschutz</title>
+</head>
+<body>
+
+<style>
+  :root{
+    --bg:#f8fafc;
+    --surface:#ffffff;
+    --border:#e2e8f0;
+    --text:#0f172a;
+    --text-dim:#475569;
+    --text-faint:#94a3b8;
+    --accent:#0e7490;
+    --accent-2:#1e3a8a;
+    --accent-soft:#ecfeff;
+    --code-bg:#f1f5f9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b1220;
+      --surface:#121b2e;
+      --border:#243244;
+      --text:#e6ecf5;
+      --text-dim:#a7b3c6;
+      --text-faint:#6b7893;
+      --accent:#22d3ee;
+      --accent-2:#60a5fa;
+      --accent-soft:#0c2733;
+      --code-bg:#0f1a2b;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b1220;
+    --surface:#121b2e;
+    --border:#243244;
+    --text:#e6ecf5;
+    --text-dim:#a7b3c6;
+    --text-faint:#6b7893;
+    --accent:#22d3ee;
+    --accent-2:#60a5fa;
+    --accent-soft:#0c2733;
+    --code-bg:#0f1a2b;
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Source Sans 3', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height:1.65;
+    padding-inline:20px;
+    padding-block:48px 80px;
+  }
+  .page{
+    max-width:760px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:28px;
+  }
+  .mark{
+    width:40px;height:40px;border-radius:11px;flex:none;
+    background:linear-gradient(135deg,var(--accent-2),var(--accent));
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-family:'Space Grotesk',sans-serif;font-size:15px;
+    letter-spacing:-0.02em;
+  }
+  .brand-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.01em;}
+  .brand-sub{font-size:12.5px;color:var(--text-faint);}
+
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(1.7rem,4vw,2.15rem);
+    font-weight:700;
+    letter-spacing:-0.015em;
+    margin:0 0 6px;
+    text-wrap:balance;
+  }
+  .meta{
+    color:var(--text-faint);
+    font-size:13.5px;
+    margin-bottom:36px;
+    padding-bottom:24px;
+    border-bottom:1px solid var(--border);
+  }
+
+  h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:1.2rem;
+    font-weight:700;
+    margin:2.6em 0 0.7em;
+    letter-spacing:-0.005em;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  h2 .num{
+    color:var(--accent);
+    font-variant-numeric:tabular-nums;
+    font-size:0.85em;
+  }
+  h2:first-of-type{margin-top:0;}
+
+  h3{
+    font-size:1rem;
+    font-weight:700;
+    margin:1.6em 0 0.5em;
+    color:var(--text);
+  }
+
+  p{margin:0 0 1em; max-width:66ch; color:var(--text-dim);}
+  strong{color:var(--text); font-weight:650;}
+
+  ul, ol{margin:0 0 1.1em; padding-left:1.3em; color:var(--text-dim);}
+  li{margin-bottom:0.45em; max-width:64ch;}
+  li::marker{color:var(--accent); font-weight:700;}
+
+  .callout{
+    background:var(--accent-soft);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:16px 18px;
+    margin:1.3em 0;
+    font-size:14.5px;
+    color:var(--text-dim);
+  }
+  .callout strong{color:var(--text);}
+
+  .fillin{
+    background:var(--code-bg);
+    border:1px dashed var(--text-faint);
+    border-radius:6px;
+    padding:1px 8px;
+    font-family:ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size:0.92em;
+    color:var(--text-dim);
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:1.2em 0;
+    font-size:14px;
+  }
+  th, td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  th{
+    color:var(--text-faint);
+    font-weight:650;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  td{color:var(--text-dim);}
+  td.k{color:var(--text); font-weight:600; white-space:nowrap;}
+  .tablewrap{overflow-x:auto;}
+
+  .toc{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px 20px;
+    margin:28px 0 40px;
+  }
+  .toc-title{font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-faint); margin-bottom:10px; font-weight:650;}
+  .toc ol{margin:0; padding-left:1.2em; columns:2; column-gap:20px;}
+  .toc li{margin-bottom:6px; font-size:14px;}
+  .toc a{color:var(--text-dim); text-decoration:none;}
+  .toc a:hover{color:var(--accent);}
+
+  footer{
+    margin-top:56px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    font-size:12.5px;
+    color:var(--text-faint);
+  }
+
+  @media (max-width:520px){
+    .toc ol{columns:1;}
+  }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600;650&display=swap">
+
+<div class="page">
+
+  <div class="brand">
+    <div class="mark">PP</div>
+    <div>
+      <div class="brand-name">PricePilot</div>
+      <div class="brand-sub">Chrome-Erweiterung für Preisvergleich</div>
+    </div>
+  </div>
+
+  <h1>Datenschutzerklärung</h1>
+  <div class="meta">Gilt für die Chrome-Erweiterung „PricePilot – Preisvergleich für DE/EU“ · Stand: <span class="fillin">18. September 2026</span></div>
+
+  <div class="toc">
+    <div class="toc-title">Inhalt</div>
+    <ol>
+      <li><a href="#verantwortlicher">Verantwortlicher</a></li>
+      <li><a href="#ueberblick">Überblick: was PricePilot tut</a></li>
+      <li><a href="#daten">Welche Daten verarbeitet werden</a></li>
+      <li><a href="#lokal">Lokal gespeicherte Daten</a></li>
+      <li><a href="#rechtsgrundlage">Rechtsgrundlage</a></li>
+      <li><a href="#dritte">Weitergabe an Dritte &amp; Affiliate-Links</a></li>
+      <li><a href="#dauer">Speicherdauer</a></li>
+      <li><a href="#rechte">Ihre Rechte</a></li>
+      <li><a href="#deinstallation">Deinstallation</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ol>
+  </div>
+
+  <h2 id="verantwortlicher"><span class="num">01</span>Verantwortlicher</h2>
+  <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO ist der Betreiber von PricePilot, erreichbar unter:</p>
+  <div class="callout">
+    E-Mail: <a href="mailto:pricepilot.k@web.de" style="color:var(--accent)">pricepilot.k@web.de</a>
+  </div>
+
+  <h2 id="ueberblick"><span class="num">02</span>Überblick: was PricePilot tut</h2>
+  <p>PricePilot ist eine kostenlose Browser-Erweiterung, die auf unterstützten Online-Shops (Amazon.de, Otto.de, MediaMarkt.de, Saturn.de) automatisch erkennt, welches Produkt Sie sich ansehen, und Ihnen vergleichbare Angebote anderer Händler anzeigt. Dafür liest die Erweiterung Produktinformationen von der jeweils geöffneten Produktseite aus und fragt beim PricePilot-Backend passende Alternativangebote ab.</p>
+
+  <h2 id="daten"><span class="num">03</span>Welche Daten verarbeitet werden</h2>
+  <p>Beim Aufruf einer Produktseite auf einem unterstützten Shop extrahiert PricePilot ausschließlich produktbezogene Informationen aus dem Seiteninhalt und übermittelt sie an das PricePilot-Backend, um passende Vergleichsangebote zu ermitteln:</p>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Datenfeld</th><th>Beispiel</th><th>Zweck</th></tr>
+    <tr><td class="k">Produkttitel</td><td>„Samsung 990 Pro 2TB NVMe SSD“</td><td>Textbasierter Abgleich</td></tr>
+    <tr><td class="k">GTIN / EAN</td><td>8806094967747</td><td>Eindeutiger Produktabgleich</td></tr>
+    <tr><td class="k">ASIN</td><td>B0C1D2E3F4</td><td>Amazon-spezifische Zuordnung</td></tr>
+    <tr><td class="k">Marke, Kategorie, MPN/SKU</td><td>„Samsung“, „SSD“</td><td>Genauere Zuordnung</td></tr>
+  </table>
+  </div>
+  <p><strong>Es werden keine personenbezogenen Daten erhoben.</strong> PricePilot verarbeitet keinen Namen, keine E-Mail-Adresse, keine Zahlungs- oder Adressdaten, keine Anmeldedaten und keinen Browserverlauf. Die aufgerufene Seiten-URL wird nicht an das Backend übertragen.</p>
+
+  <h2 id="lokal"><span class="num">04</span>Lokal gespeicherte Daten</h2>
+  <p>Zusätzlich speichert PricePilot bestimmte Daten ausschließlich lokal auf Ihrem Gerät, über die Chrome-Speicher-API (<code style="background:var(--code-bg);padding:1px 6px;border-radius:4px;">chrome.storage</code>):</p>
+  <ul>
+    <li><strong>Einstellungen</strong> (z. B. aktivierte Shops) – über <code style="background:var(--code-bg);padding:1px 6px;border-radius:4px;">chrome.storage.sync</code></li>
+    <li><strong>Preishistorie</strong> der von Ihnen besuchten Produkte – über <code style="background:var(--code-bg);padding:1px 6px;border-radius:4px;">chrome.storage.local</code>, nur auf diesem Gerät</li>
+  </ul>
+  <p>Diese Daten verlassen Ihr Gerät nicht, werden nicht an das PricePilot-Backend oder Dritte übertragen und nicht zwischen Geräten synchronisiert (mit Ausnahme der Einstellungen, die Chrome ggf. über Ihr eigenes Google-Konto synchronisiert, sofern Sie die Chrome-Synchronisierung aktiviert haben).</p>
+
+  <h2 id="rechtsgrundlage"><span class="num">05</span>Rechtsgrundlage</h2>
+  <p>Die Verarbeitung der produktbezogenen Daten erfolgt auf Grundlage von <strong>Art. 6 Abs. 1 lit. f DSGVO</strong> (berechtigtes Interesse), da sie zur Kernfunktion der Erweiterung – dem Anzeigen von Preisvergleichen – technisch erforderlich ist und dem berechtigten Interesse des Nutzers an dieser Funktion entspricht.</p>
+
+  <h2 id="dritte"><span class="num">06</span>Weitergabe an Dritte &amp; Affiliate-Links</h2>
+  <p>Produktbezogene Anfragen werden ausschließlich an das eigene PricePilot-Backend übermittelt. Eine Weitergabe an Dritte zu Werbe- oder Analysezwecken findet nicht statt.</p>
+  <p>Wenn Sie auf ein angezeigtes Angebot klicken, werden Sie über einen Weiterleitungslink zum jeweiligen Händler geleitet, der einen Affiliate-Tag enthalten kann (u. a. Amazon-Partnerprogramm, Awin). Dabei gelten die Datenschutzbestimmungen des jeweiligen Händlers bzw. Partnerprogramms. PricePilot erhält in diesem Fall ggf. eine Provision – für Sie entstehen dadurch keine Mehrkosten.</p>
+
+  <h2 id="dauer"><span class="num">07</span>Speicherdauer</h2>
+  <p>Anfragen an das Backend werden dort ausschließlich zur Beantwortung der jeweiligen Preisvergleichsanfrage verarbeitet. Lokal gespeicherte Preishistorie bleibt auf Ihrem Gerät, bis Sie sie über die Erweiterungseinstellungen löschen oder die Erweiterung deinstallieren.</p>
+
+  <h2 id="rechte"><span class="num">08</span>Ihre Rechte</h2>
+  <p>Nach der DSGVO stehen Ihnen folgende Rechte zu:</p>
+  <ul>
+    <li>Auskunft über die zu Ihrer Person verarbeiteten Daten (Art. 15 DSGVO)</li>
+    <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+    <li>Löschung (Art. 17 DSGVO)</li>
+    <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+    <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+    <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+    <li>Beschwerde bei einer Datenschutzaufsichtsbehörde</li>
+  </ul>
+  <p>Da PricePilot keine personenbezogenen Daten dauerhaft mit einer Identität verknüpft speichert, lassen sich viele dieser Rechte bereits durch das Löschen der lokalen Erweiterungsdaten bzw. die Deinstallation der Erweiterung umsetzen.</p>
+
+  <h2 id="deinstallation"><span class="num">09</span>Deinstallation</h2>
+  <p>Sie können PricePilot jederzeit über <code style="background:var(--code-bg);padding:1px 6px;border-radius:4px;">chrome://extensions</code> deinstallieren. Dabei werden sämtliche lokal gespeicherten Daten (Einstellungen, Preishistorie) automatisch von Chrome entfernt.</p>
+
+  <h2 id="kontakt"><span class="num">10</span>Kontakt</h2>
+  <p>Bei Fragen zum Datenschutz wenden Sie sich bitte an: <a href="mailto:pricepilot.k@web.de" style="color:var(--accent)">pricepilot.k@web.de</a></p>
+
+  <footer>
+    PricePilot ist ein kostenloses, unabhängiges Vergleichsangebot und nicht mit Amazon, Otto, MediaMarkt oder Saturn verbunden. Diese Datenschutzerklärung beschreibt ausschließlich die Datenverarbeitung durch die PricePilot-Browsererweiterung.
+  </footer>
+
+</div>
+
+</body>
+</html>
